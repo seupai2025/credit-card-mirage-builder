@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { CheckCircle, Shield, Clock, CreditCard, Star, Building, Zap, Award, TrendingUp, Users, Phone } from "lucide-react";
+import { CheckCircle, Shield, Clock, CreditCard, Star, Building, Zap, Award, TrendingUp, Users, Phone, Sparkles, ArrowRight, Eye, Timer } from "lucide-react";
 
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutes in seconds
@@ -46,184 +46,186 @@ const Index = () => {
     </div>
   );
 
-  // Hero Section
+  // Hero Section with Krédito branding
   const HeroSection = () => (
-    <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white overflow-hidden">
-      {/* Background geometric patterns */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-500 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+    <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-black text-white overflow-hidden min-h-screen">
+      {/* Diagonal gold accents */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-yellow-400 to-orange-500 transform rotate-45 translate-x-48 -translate-y-48"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-yellow-400 to-orange-500 transform rotate-45 -translate-x-32 translate-y-32"></div>
       </div>
       
-      {/* Grid pattern overlay */}
+      {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0)`,
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
         }}></div>
       </div>
 
       {/* Floating promotional banners */}
-      <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold text-sm animate-pulse z-10">
-        ⚡ ÚLTIMAS 50 VAGAS
+      <div className="absolute top-4 left-4 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2 rounded-lg font-bold text-sm animate-pulse z-10 shadow-xl">
+        ⚡ ÚLTIMAS 73 VAGAS
       </div>
-      <div className="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold text-sm animate-bounce z-10">
-        🎯 97% APROVADOS HOJE
+      <div className="absolute top-4 right-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-lg font-bold text-sm animate-bounce z-10 shadow-xl">
+        🎯 94% APROVADOS HOJE
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 py-20">
-        {/* Bank Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center mb-6">
+        {/* Bank Header with Logo */}
+        <div className="text-center mb-16">
+          {/* Logo Section */}
+          <div className="flex items-center justify-center mb-8">
             <div className="relative">
-              <Building className="w-16 h-16 mr-4 text-blue-400" />
-              <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
+              <img 
+                src="/lovable-uploads/f0c6e652-f95e-42c7-9c64-453f6b37981c.png" 
+                alt="Krédito Logo" 
+                className="h-20 w-auto filter brightness-0 invert"
+              />
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
                 <CheckCircle className="w-3 h-3 text-white" />
               </div>
             </div>
-            <div>
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent">
-                BANCO CREDFÁCIL
-              </h1>
-              <p className="text-sm text-blue-200 uppercase tracking-wider font-semibold">Instituição Financeira Digital Licenciada</p>
-              <div className="flex items-center justify-center gap-2 mt-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-xs text-green-300">Online e Operante</span>
-              </div>
+          </div>
+          
+          <div>
+            <p className="text-lg text-slate-300 uppercase tracking-wider font-semibold mb-2">Banco Digital Autorizado</p>
+            <div className="flex items-center justify-center gap-2 mb-8">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-sm text-green-300">Sistema Online • Operação Normal</span>
             </div>
           </div>
           
           {/* Enhanced trust indicators */}
           <div className="flex flex-wrap justify-center gap-4 mb-8 text-xs">
-            <div className="flex items-center gap-1 bg-blue-600/20 backdrop-blur px-3 py-2 rounded-full border border-blue-400/30">
-              <Shield className="w-4 h-4 text-blue-300" />
-              <span className="text-blue-200">BACEN 12.345.678/0001-90</span>
+            <div className="flex items-center gap-1 bg-slate-800/60 backdrop-blur px-4 py-2 rounded-full border border-yellow-400/30">
+              <Shield className="w-4 h-4 text-yellow-300" />
+              <span className="text-slate-200">BACEN 33.987.274/0001-12</span>
             </div>
-            <div className="flex items-center gap-1 bg-green-600/20 backdrop-blur px-3 py-2 rounded-full border border-green-400/30">
+            <div className="flex items-center gap-1 bg-slate-800/60 backdrop-blur px-4 py-2 rounded-full border border-green-400/30">
               <Award className="w-4 h-4 text-green-300" />
-              <span className="text-green-200">Desde 2015 • 9 anos</span>
+              <span className="text-slate-200">Desde 2018 • 6 anos</span>
             </div>
-            <div className="flex items-center gap-1 bg-purple-600/20 backdrop-blur px-3 py-2 rounded-full border border-purple-400/30">
-              <Users className="w-4 h-4 text-purple-300" />
-              <span className="text-purple-200">+2.8M clientes ativos</span>
+            <div className="flex items-center gap-1 bg-slate-800/60 backdrop-blur px-4 py-2 rounded-full border border-blue-400/30">
+              <Users className="w-4 h-4 text-blue-300" />
+              <span className="text-slate-200">+1.2M clientes ativos</span>
             </div>
-            <div className="flex items-center gap-1 bg-yellow-600/20 backdrop-blur px-3 py-2 rounded-full border border-yellow-400/30">
+            <div className="flex items-center gap-1 bg-slate-800/60 backdrop-blur px-4 py-2 rounded-full border border-yellow-400/30">
               <Star className="w-4 h-4 text-yellow-300" />
-              <span className="text-yellow-200">4.8★ Reclame Aqui</span>
+              <span className="text-slate-200">4.7★ Reclame Aqui</span>
             </div>
           </div>
 
           {/* Live activity banner */}
-          <div className="bg-green-600/10 backdrop-blur border border-green-400/20 rounded-xl p-4 mb-8 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center gap-2 text-green-300">
+          <div className="bg-gradient-to-r from-slate-800/60 to-slate-700/60 backdrop-blur border border-green-400/20 rounded-xl p-6 mb-8 max-w-3xl mx-auto shadow-2xl">
+            <div className="flex items-center justify-center gap-2 text-green-300 mb-3">
               <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="font-semibold">🔥 Atividade em tempo real:</span>
+              <span className="font-semibold text-lg">🔥 Aprovações em Tempo Real</span>
             </div>
-            <div className="text-sm text-green-200 mt-2 space-y-1">
-              <p>• Carlos S. - São Paulo: Cartão aprovado há 2 min - Limite R$ 3.500</p>
-              <p>• Maria F. - Rio de Janeiro: Cartão aprovado há 4 min - Limite R$ 2.800</p>
-              <p>• João M. - Belo Horizonte: Cartão aprovado há 7 min - Limite R$ 4.200</p>
+            <div className="text-sm text-slate-200 space-y-2">
+              <div className="flex items-center justify-between bg-slate-900/40 p-3 rounded-lg">
+                <span>• Ana M. - São Paulo</span>
+                <span className="text-green-400 font-bold">R$ 4.200 aprovado há 1 min</span>
+              </div>
+              <div className="flex items-center justify-between bg-slate-900/40 p-3 rounded-lg">
+                <span>• Carlos L. - Rio de Janeiro</span>
+                <span className="text-green-400 font-bold">R$ 3.800 aprovado há 3 min</span>
+              </div>
+              <div className="flex items-center justify-between bg-slate-900/40 p-3 rounded-lg">
+                <span>• Marina S. - Belo Horizonte</span>
+                <span className="text-green-400 font-bold">R$ 2.900 aprovado há 5 min</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
-          <div className="text-center lg:text-left">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Cartão de Crédito
-              <span className="block bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+          <div className="text-center lg:text-left space-y-8">
+            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+              <span className="block text-white">Cartão Internacional</span>
+              <span className="block bg-gradient-to-r from-yellow-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent">
                 SEM CONSULTA
               </span>
-              <span className="block text-3xl text-blue-200">ao SPC/Serasa</span>
-            </h2>
+              <span className="block text-2xl md:text-3xl text-slate-300 font-semibold">aos Órgãos de Proteção</span>
+            </h1>
             
-            <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6 rounded-2xl mb-8 shadow-2xl">
-              <p className="text-xl font-bold mb-2">✅ LIMITE PRÉ-APROVADO</p>
-              <p className="text-3xl font-black">Até R$ 5.000</p>
-              <p className="text-sm mt-2 opacity-90">Aprovação em 5 minutos • 100% Digital</p>
+            <div className="bg-gradient-to-r from-slate-800 to-slate-700 border border-yellow-400/30 text-white p-8 rounded-2xl mb-8 shadow-2xl">
+              <div className="flex items-center gap-3 mb-4">
+                <Sparkles className="w-6 h-6 text-yellow-400" />
+                <p className="text-xl font-bold text-yellow-400">LIMITE PRÉ-APROVADO</p>
+              </div>
+              <p className="text-4xl font-black mb-2">Até R$ 5.000</p>
+              <p className="text-slate-300 flex items-center gap-2">
+                <Timer className="w-4 h-4" />
+                Aprovação em 3 minutos • 100% Digital
+              </p>
             </div>
             
-            <div className="bg-red-600 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-4 rounded-xl mb-8 shadow-xl border border-red-500">
-              <div className="flex items-center justify-center gap-2">
-                <Zap className="w-5 h-5 animate-pulse" />
-                <span className="font-bold">OFERTA LIMITADA - HOJE APENAS</span>
-                <Zap className="w-5 h-5 animate-pulse" />
+            <div className="bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-6 rounded-xl mb-8 shadow-xl border border-red-500/50 transform hover:scale-105 transition-transform">
+              <div className="flex items-center justify-center gap-3">
+                <Zap className="w-6 h-6 animate-pulse" />
+                <span className="font-bold text-lg">PROMOÇÃO ESPECIAL - HOJE SOMENTE</span>
+                <Zap className="w-6 h-6 animate-pulse" />
               </div>
+              <p className="text-center mt-2 text-red-100">Sem taxas de adesão • Sem anuidade no 1º ano</p>
             </div>
 
-            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 text-white text-xl px-12 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-200">
-              <CreditCard className="w-6 h-6 mr-2" />
-              SOLICITAR AGORA - GRÁTIS
+            <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black text-xl font-black px-16 py-8 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-yellow-400">
+              <CreditCard className="w-7 h-7 mr-3" />
+              SOLICITAR CARTÃO GRÁTIS
+              <ArrowRight className="w-7 h-7 ml-3" />
             </Button>
           </div>
 
-          {/* Right content - Credit card */}
+          {/* Right content - Krédito Credit card */}
           <div className="relative">
-            <div className="relative transform rotate-6 hover:rotate-3 transition-transform duration-500">
+            <div className="relative transform rotate-3 hover:rotate-1 transition-transform duration-500">
               {/* Card shadow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl blur-xl opacity-50 transform translate-x-4 translate-y-4"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/30 to-orange-600/30 rounded-2xl blur-2xl opacity-60 transform translate-x-6 translate-y-6"></div>
               
-              {/* Actual card */}
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl shadow-2xl border border-slate-700">
-                {/* Card background pattern */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-2xl"></div>
-                <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-yellow-400/20 to-orange-500/20 rounded-full blur-xl"></div>
-                
-                <div className="relative">
-                  {/* Bank logo */}
-                  <div className="flex justify-between items-start mb-8">
-                    <div className="text-white">
-                      <p className="text-sm font-bold tracking-wider">BANCO CREDFÁCIL</p>
-                      <p className="text-xs text-blue-300">MASTERCARD</p>
-                    </div>
-                    <div className="w-12 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded opacity-80"></div>
-                  </div>
-
-                  {/* Chip */}
-                  <div className="w-12 h-9 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg mb-6 shadow-lg"></div>
-
-                  {/* Card number */}
-                  <div className="text-white text-xl font-mono tracking-wider mb-6">
-                    •••• •••• •••• 1234
-                  </div>
-
-                  {/* Card details */}
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <p className="text-blue-300 text-xs mb-1">TITULAR</p>
-                      <p className="text-white font-bold">JOÃO SILVA</p>
-                    </div>
-                    <div>
-                      <p className="text-blue-300 text-xs mb-1">VÁLIDO</p>
-                      <p className="text-white font-mono">12/28</p>
-                    </div>
-                  </div>
-                </div>
+              {/* Actual card matching the uploaded image */}
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/f6bd72fe-aa67-40bd-99fc-3751589855a7.png" 
+                  alt="Cartão Krédito" 
+                  className="w-full h-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
             
-            {/* Approval badge */}
-            <div className="absolute -bottom-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold shadow-xl animate-pulse">
-              ✓ APROVADO
+            {/* Floating approval badges */}
+            <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-4 rounded-full font-bold shadow-2xl animate-pulse">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5" />
+                <span>PRÉ-APROVADO</span>
+              </div>
+            </div>
+            
+            <div className="absolute -top-4 -left-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-4 py-2 rounded-full font-bold shadow-xl">
+              <span className="text-sm">💳 INTERNACIONAL</span>
             </div>
           </div>
         </div>
 
-        {/* Trust badges */}
-        <div className="text-center mt-16">
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-200">
-            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur">
-              <Shield className="w-4 h-4" />
-              <span>Protegido por SSL</span>
+        {/* Enhanced trust section */}
+        <div className="text-center mt-20">
+          <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-2 bg-slate-800/40 backdrop-blur px-6 py-4 rounded-xl border border-slate-700">
+              <Shield className="w-5 h-5 text-green-400" />
+              <span className="text-slate-200 font-medium">SSL 256-bit</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur">
-              <Building className="w-4 h-4" />
-              <span>Banco Central</span>
+            <div className="flex items-center justify-center gap-2 bg-slate-800/40 backdrop-blur px-6 py-4 rounded-xl border border-slate-700">
+              <Building className="w-5 h-5 text-blue-400" />
+              <span className="text-slate-200 font-medium">BACEN</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur">
-              <Award className="w-4 h-4" />
-              <span>Certificado ISO</span>
+            <div className="flex items-center justify-center gap-2 bg-slate-800/40 backdrop-blur px-6 py-4 rounded-xl border border-slate-700">
+              <Award className="w-5 h-5 text-yellow-400" />
+              <span className="text-slate-200 font-medium">ISO 27001</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 bg-slate-800/40 backdrop-blur px-6 py-4 rounded-xl border border-slate-700">
+              <Star className="w-5 h-5 text-purple-400" />
+              <span className="text-slate-200 font-medium">Mastercard</span>
             </div>
           </div>
         </div>
@@ -233,28 +235,32 @@ const Index = () => {
 
   // Benefits Section
   const BenefitsSection = () => (
-    <div className="relative py-20 px-4 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
-      {/* Background patterns */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-64 h-64 bg-green-500 rounded-full blur-3xl"></div>
+    <div className="relative py-20 px-4 bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
+      {/* Background patterns with Krédito theme */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-64 h-64 bg-gradient-to-br from-slate-700 to-black rounded-full blur-3xl"></div>
       </div>
       
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h3 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent">
-            Por que escolher o Banco CredFácil?
+          <h3 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 via-yellow-600 to-slate-800 bg-clip-text text-transparent">
+            Por que escolher o Banco Krédito?
           </h3>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Tecnologia de ponta, segurança bancária e aprovação instantânea para quem precisa de crédito
+          <p className="text-xl text-slate-700 max-w-3xl mx-auto font-medium">
+            Tecnologia bancária avançada, segurança internacional e aprovação em minutos
           </p>
         </div>
         
         {/* Promotional banner */}
-        <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-4 rounded-xl mb-12 shadow-2xl border border-red-500">
+        <div className="bg-gradient-to-r from-slate-800 to-black text-white p-6 rounded-2xl mb-12 shadow-2xl border border-yellow-400/30">
           <div className="text-center">
-            <p className="font-bold text-lg">🔥 ATENÇÃO: Apenas 127 vagas restantes para aprovação sem consulta!</p>
-            <p className="text-sm mt-1 text-red-100">Mais de 2.500 pessoas solicitaram nas últimas 24h</p>
+            <p className="font-bold text-xl mb-2">🔥 ATENÇÃO: Apenas 89 vagas restantes para aprovação sem consulta!</p>
+            <p className="text-slate-300">Mais de 1.847 pessoas solicitaram nas últimas 24h</p>
+            <div className="mt-3 flex items-center justify-center gap-2">
+              <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+              <span className="text-yellow-400 font-semibold text-sm">PROMOÇÃO ATIVA</span>
+            </div>
           </div>
         </div>
 
@@ -740,7 +746,7 @@ const Index = () => {
               </div>
               
               <p className="text-xs text-center text-slate-500 leading-relaxed">
-                Ao continuar, você autoriza o Banco CredFácil a utilizar seus dados para análise de crédito e concorda com nossos 
+                Ao continuar, você autoriza o Banco Krédito a utilizar seus dados para análise de crédito e concorda com nossos 
                 <a href="#" className="text-blue-600 hover:underline ml-1">termos de uso</a> e 
                 <a href="#" className="text-blue-600 hover:underline ml-1">política de privacidade</a>.
               </p>
